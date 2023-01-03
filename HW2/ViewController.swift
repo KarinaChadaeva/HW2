@@ -60,6 +60,28 @@ class ViewController: UIViewController {
     }
     
     // Настройка работы buttons
+    @IBAction func setWhite() {
+        redSlider.value = 255
+        greenSlider.value = 255
+        blueSlider.value = 255
+        setColor()
+        setValue()
+    }
     
+    @IBAction func setBlack() {
+        redSlider.value = 0
+        greenSlider.value = 0
+        blueSlider.value = 0
+        setColor()
+        setValue()
+    }
+    
+    @IBAction func setRandomColor() {
+        redSlider.value = Float.random(in: 0...255)
+        greenSlider.value = Float.random(in: 0...255)
+        blueSlider.value = Float.random(in: 0...255)
+        setColor()
+        setValue()
+    }
 }
 
