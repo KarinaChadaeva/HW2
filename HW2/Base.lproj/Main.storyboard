@@ -106,15 +106,85 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="UHv-9J-MPd">
+                                <rect key="frame" x="16" y="369" width="343" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQA-z1-Qlv">
+                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="0uu-sR-wfo"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="146" id="tKB-Lr-T6F"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Black">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.96466621850000001" green="0.84167181639999999" blue="0.45376806339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="setBlack" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZPN-c4-fea"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2T-Vg-UZm">
+                                        <rect key="frame" x="187.5" y="0.0" width="155.5" height="66"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="White">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.96466621850000001" green="0.84167181639999999" blue="0.45376806339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="setWhite" destination="BYZ-38-t0r" eventType="touchUpInside" id="gO3-DJ-Ytm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="kCa-f2-njL">
+                                <rect key="frame" x="16" y="467" width="343" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAH-KA-STe">
+                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="GGS-XF-GRS"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="146" id="tgC-c9-snM"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Random">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.96466621850000001" green="0.84167181639999999" blue="0.45376806339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ju-RR-F0D">
+                                        <rect key="frame" x="187.5" y="0.0" width="155.5" height="66"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Reset">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.96466621850000001" green="0.84167181639999999" blue="0.45376806339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
                             <constraint firstItem="S1G-eM-K0q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="868-O0-OuU"/>
                             <constraint firstAttribute="trailing" secondItem="JHD-zu-L8F" secondAttribute="trailing" constant="16" id="BKO-D1-QUe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UHv-9J-MPd" secondAttribute="trailing" constant="16" id="G61-KL-hNl"/>
                             <constraint firstItem="JHD-zu-L8F" firstAttribute="top" secondItem="S1G-eM-K0q" secondAttribute="bottom" constant="16" id="HIR-Xb-VaE"/>
+                            <constraint firstItem="kCa-f2-njL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MSJ-OX-JfY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kCa-f2-njL" secondAttribute="trailing" constant="16" id="P5U-yp-DZc"/>
+                            <constraint firstItem="UHv-9J-MPd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PH5-26-qDd"/>
                             <constraint firstItem="S1G-eM-K0q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZZx-xe-GOI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S1G-eM-K0q" secondAttribute="trailing" constant="16" id="a1s-Ag-kkr"/>
+                            <constraint firstItem="kCa-f2-njL" firstAttribute="top" secondItem="UHv-9J-MPd" secondAttribute="bottom" constant="32" id="cvA-wI-CDJ"/>
+                            <constraint firstItem="UHv-9J-MPd" firstAttribute="top" secondItem="JHD-zu-L8F" secondAttribute="bottom" constant="32" id="hoT-er-j59"/>
                             <constraint firstItem="JHD-zu-L8F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tQH-2n-aCX"/>
                         </constraints>
                     </view>

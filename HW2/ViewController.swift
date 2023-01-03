@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +28,7 @@ class ViewController: UIViewController {
         greenSlider.minimumTrackTintColor = .green
     }
 
+    // Меняем цвет вью
     @IBAction func rgbSlider(_ sender: UISlider) {
         setColor()
         
@@ -47,15 +47,19 @@ class ViewController: UIViewController {
                                            alpha: 1)
     }
     
+    // Устанавливаем значение label в соответствии с value слайдеров
     @IBAction func setValue() {
         redLabel.text = string(from: redSlider)
         greenLabel.text = string(from: greenSlider)
         blueLabel.text = string(from: blueSlider)
     }
     
+    // Вспомогательная функция
     private func string(from slider: UISlider) -> String {
         String(Int(slider.value))
     }
+    
+    // Настройка работы buttons
     
 }
 
