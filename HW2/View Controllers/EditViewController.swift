@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol EditViewControllerDelegate: AnyObject {
+    func setColorOfView(color: UIColor)
+}
+
+class EditViewController: UIViewController {
     @IBOutlet weak var mainView: UIView!
     
     @IBOutlet weak var redLabel: UILabel!
@@ -18,6 +22,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
+    //MARK: Private Properties
+    weak var delegate: EditViewControllerDelegate?
+    var viewColor: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +33,11 @@ class ViewController: UIViewController {
         
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
+        
+        mainView.backgroundColor = viewColor
     }
-
+    
+    //MARK: - IBActions
     // Меняем цвет вью
     @IBAction func rgbSlider(_ sender: UISlider) {
         setColor()
@@ -40,13 +50,6 @@ class ViewController: UIViewController {
         }
     }
     
-    private func setColor() {
-        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value) / 255,
-                                           green: CGFloat(greenSlider.value) / 255,
-                                           blue: CGFloat(blueSlider.value) / 255,
-                                           alpha: 1)
-    }
-    
     // Устанавливаем значение label в соответствии с value слайдеров
     @IBAction func setValue() {
         redLabel.text = string(from: redSlider)
@@ -54,12 +57,30 @@ class ViewController: UIViewController {
         blueLabel.text = string(from: blueSlider)
     }
     
-    // Вспомогательная функция
+    @IBAction func doneButtonPressed() {
+        delegate?.setColorOfView(color: mainView.backgroundColor ?? .white)
+        dismiss(animated: true)
+    }
+    
+    
+    //MARK: - Private Methods
+    private func setColor() {
+        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value) / 255,
+                                           green: CGFloat(greenSlider.value) / 255,
+                                           blue: CGFloat(blueSlider.value) / 255,
+                                           alpha: 1)
+    }
+    
+    
     private func string(from slider: UISlider) -> String {
         String(Int(slider.value))
     }
+}
     
-    // Настройка работы buttons
+    
+    //MARK: Buttons Actions
+extension EditViewController {
+    
     @IBAction func setWhite() {
         redSlider.value = 255
         greenSlider.value = 255
